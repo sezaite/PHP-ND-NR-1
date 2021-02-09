@@ -16,7 +16,7 @@ echo "as esu  $vardas $pavarde, man siemet sukaks " . ($dabarMetai - $gimimoMeta
 echo '<br>';
 echo 'as esu ' .  $vardas . ' ' . $pavarde . ', man siemet sukaks ' . ($dabarMetai - $gimimoMetai) . ' metai';
 echo '<br>';
-echo '<br>';
+
 
 //ANTRA UZDUOTIS
 
@@ -26,7 +26,6 @@ $antras = rand(0, 4);
 
 echo $pirmas > 0 && $antras > 0 ? ($pirmas > $antras ? number_format($pirmas / $antras, 2) : number_format($antras / $pirmas, 2)) : 'is nulio nedalinsiu';
 
-echo '<br>';
 echo '<br>';
 
 //TRECIA UZDUOTIS
@@ -56,7 +55,6 @@ $trecias = rand(0, 25);
                 }
             }
     } 
-    echo '<br>';
     echo '<br>';
 
 //KETVIRTA UZDUOTIS
@@ -123,13 +121,11 @@ echo $a.$b.$c.$d;
 echo '<br>';
 echo "turim nuliu: $zero, vienetu: $vienas, dvejetu: $du.";
 echo '<br>';
-echo '<br>';
 
 //SESTA UZDUOTIS
 
 $randomezas = rand(1, 6);
 echo "<h$randomezas>$randomezas</h$randomezas>";
-echo '<br>';
 echo '<br>';
 
 //SEPTINTA UZDUOTIS
@@ -162,7 +158,109 @@ echo "<h3 style='color: aqua'>$skaicius3</h3>";
 }
 
 //ASTUNTA UZDUOTIS
-// Įmonė parduoda žvakes po 1 EUR. Perkant daugiau kaip už 1000 EUR taikoma 3 % nuolaida, daugiau kaip už 2000 EUR - 4 % nuolaida. Parašykite programą, kuri skaičiuos žvakių kainą ir atspausdintų atsakymą kiek žvakių ir kokia kaina perkama. Žvakių kiekį generuokite ​rand()​ funkcija nuo 5 iki 3000.
+
+
+
+$zvakes = rand(5, 3000);
+if ($zvakes < 1000){
+    echo "perkamos $zvakes zvakes uz $zvakes EUR kaina";
+} else if ($zvakes < 2000){
+    echo "perkamos $zvakes zvakes uz " . ($zvakes * 0.97) . ' EUR kaina';
+} else {
+   echo "perkamos $zvakes zvakes uz " . ($zvakes * 0.96) . ' EUR kaina';
+}
+
+echo '<br>';
+
+//DEVINTA UZDUOTIS
+
+// Naudokite funkcija rand(). Sukurkite tris kintamuosius su atsitiktinėm reikšmėm nuo 0 iki 100. Paskaičiuokite jų aritmetinį vidurkį. Ir aritmetinį vidurkį atmetus tas reikšmes, kurios yra mažesnės nei 10 arba didesnės nei 90. Abu vidurkius atspausdinkite. Rezultatus apvalinkite iki sveiko skaičiaus.
+
+$a = rand(1, 100);
+$b = rand(1, 100);
+$c = rand(1, 100);
+
+$j = 0;
+$suma = 0;
+
+$pirmasVidurkis = ($a + $b + $c) / 3;
+
+echo 'pirmas vidurkis: ';
+echo number_format($pirmasVidurkis, 0); 
+echo '<br>';
+if ($a < 90 && $a > 10 ){
+    $suma += $a;
+    $j++;
+}
+if ($b < 90 && $b > 10 ){
+    $suma += $b;
+    $j++;
+}
+if ($c < 90 && $c > 10 ){
+    $suma += $c;
+    $j++;
+}
+
+echo 'antras vidurkis: ';
+if($j > 0){
+echo number_format($suma / $j, 0);
+} else {
+    echo 'dalyba is nulio negalima';
+}
+echo '<br>';
+
+//DESIMTA UZDUOTIS:
+// Padarykite skaitmeninį laikrodį, rodantį valandas, minutes ir sekundes. Valandom, minutėm ir sekundėm sugeneruoti panaudokite funkciją rand(). Sugeneruokite skaičių nuo 0 iki 300. Tai papildomos sekundės. Skaičių pridėkite prie jau sugeneruoto laiko. Atspausdinkite laikrodį prieš ir po sekundžių pridėjimo ir pridedamų sekundžių skaičių.
+
+
+$valandos = rand(0, 23);
+$minutes = rand(0, 59);
+$sekundes = rand(0, 59);
+
+$valandosKopija = $valandos;
+$minutesKopija = $minutes;
+$sekundesKopija = $sekundes;
+
+if($valandos < 10){
+    $valandosKopija = "0$valandos";
+}
+if($minutes < 10){
+    $minutesKopija = "0$minutes";
+}
+if($sekundes < 10){
+    $sekundesKopija = "0$sekundes";
+}
+
+echo "laikas: $valandosKopija:$minutesKopija:$sekundesKopija.";
+echo '<br>';
+$random = rand(0, 300);
+
+    if ($sekundes + $random < 59) {
+        $sekundes = $sekundes + $random;
+    } else {
+        $sekundesNaujos = ($sekundes + $random) % 60;
+        $minutes += (($random + $sekundes - $sekundesNaujos) / 60);
+        if($minutes > 59){
+            $minutes -= 60;
+            $valandos++;
+            if($valandos > 23){
+                $valandos = 0;
+            }
+    }
+}
+
+if($valandos < 10){
+    $valandos = "0$valandos";
+}
+if($minutes < 10){
+    $minutes = "0$minutes";
+}
+if($sekundesNaujos < 10){
+    $sekundesNaujos = "0$sekundesNaujos";
+}
+echo '<br>';
+echo "naujas laikas pridejus $random sekundes: $valandos:$minutes:$sekundesNaujos.";
+
 
 ?>
 
