@@ -3,6 +3,9 @@
 <?php
 
 //PIRMA UZDUOTIS
+echo '----------------------------------PIRMA UZDUOTIS-------------------------------';
+echo '<br>';
+echo '<br>';
 
 $vardas = 'Martyna';
 $pavarde = 'Sezaite';
@@ -10,15 +13,17 @@ $gimimoMetai = 2015;
 
 $dabarMetai = 2021;
 
-//get metai??
-
 echo "as esu  $vardas $pavarde, man siemet sukaks " . ($dabarMetai - $gimimoMetai) . ' metai';
 echo '<br>';
 echo 'as esu ' .  $vardas . ' ' . $pavarde . ', man siemet sukaks ' . ($dabarMetai - $gimimoMetai) . ' metai';
 echo '<br>';
 
+echo '<br>';
 
 //ANTRA UZDUOTIS
+echo '----------------------------------ANTRA UZDUOTIS-------------------------------';
+echo '<br>';
+echo '<br>';
 
 
 $pirmas = rand(0, 4);
@@ -29,6 +34,9 @@ echo $pirmas > 0 && $antras > 0 ? ($pirmas > $antras ? number_format($pirmas / $
 echo '<br>';
 
 //TRECIA UZDUOTIS
+echo '----------------------------------TRECIA UZDUOTIS-------------------------------';
+echo '<br>';
+echo '<br>';
 
 $pirmas = rand(0, 25);
 $antras = rand(0, 25);
@@ -58,10 +66,16 @@ $trecias = rand(0, 25);
     echo '<br>';
 
 //KETVIRTA UZDUOTIS
+echo '----------------------------------KETVIRTA UZDUOTIS-------------------------------';
+echo '<br>';
+echo '<br>';
 
 $a = rand(1, 10);
 $b = rand(1, 10);
 $c = rand(1, 10);
+
+echo (($a + $b) > $c) && (($a + $c) > $b) && (($c + $b) > $a) ? 'galima' : 'negalima';
+
 
 echo $a;
 echo '<br>';
@@ -69,12 +83,15 @@ echo $b;
 echo '<br>';
 echo $c;
 echo '<br>';
-echo (($a + $b) > $c) && (($a + $c) > $b) && (($c + $b) > $a) ? 'galima' : 'negalima';
+
 
 echo '<br>';
 echo '<br>';
 
 //PENKTA UZDUOTIS
+echo '----------------------------------PENKTA UZDUOTIS-------------------------------';
+echo '<br>';
+echo '<br>';
 
 $zero = 0;
 $vienas = 0;
@@ -123,12 +140,17 @@ echo "turim nuliu: $zero, vienetu: $vienas, dvejetu: $du.";
 echo '<br>';
 
 //SESTA UZDUOTIS
+echo '----------------------------------SESTA UZDUOTIS-------------------------------';
+echo '<br>';
+echo '<br>';
 
 $randomezas = rand(1, 6);
 echo "<h$randomezas>$randomezas</h$randomezas>";
 echo '<br>';
 
 //SEPTINTA UZDUOTIS
+echo '----------------------------------SEPTINTA UZDUOTIS-------------------------------';
+echo '<br>';
 
 $skaicius1 = rand(-10, 10);
 if($skaicius1 < 0) {
@@ -159,7 +181,9 @@ echo "<h3 style='color: aqua'>$skaicius3</h3>";
 
 //ASTUNTA UZDUOTIS
 
-
+echo '----------------------------------ASTUNTA UZDUOTIS-------------------------------';
+echo '<br>';
+echo '<br>';
 
 $zvakes = rand(5, 3000);
 if ($zvakes < 1000){
@@ -174,13 +198,15 @@ echo '<br>';
 
 //DEVINTA UZDUOTIS
 
-// Naudokite funkcija rand(). Sukurkite tris kintamuosius su atsitiktinėm reikšmėm nuo 0 iki 100. Paskaičiuokite jų aritmetinį vidurkį. Ir aritmetinį vidurkį atmetus tas reikšmes, kurios yra mažesnės nei 10 arba didesnės nei 90. Abu vidurkius atspausdinkite. Rezultatus apvalinkite iki sveiko skaičiaus.
+echo '----------------------------------DEVINTA UZDUOTIS-------------------------------';
+echo '<br>';
+echo '<br>';
 
 $a = rand(1, 100);
 $b = rand(1, 100);
 $c = rand(1, 100);
 
-$j = 0;
+$daliklis = 0;
 $suma = 0;
 
 $pirmasVidurkis = ($a + $b + $c) / 3;
@@ -190,28 +216,27 @@ echo number_format($pirmasVidurkis, 0);
 echo '<br>';
 if ($a < 90 && $a > 10 ){
     $suma += $a;
-    $j++;
+    $daliklis++;
 }
 if ($b < 90 && $b > 10 ){
     $suma += $b;
-    $j++;
+    $daliklis++;
 }
 if ($c < 90 && $c > 10 ){
     $suma += $c;
-    $j++;
+    $daliklis++;
 }
 
 echo 'antras vidurkis: ';
-if($j > 0){
-echo number_format($suma / $j, 0);
+if($daliklis > 0){
+echo number_format($suma / $daliklis, 0);
 } else {
-    echo 'dalyba is nulio negalima';
+    echo 'nei vienas skaicius nepraejo atrankos. dalyba is nulio negalima';
 }
 echo '<br>';
 
-//DESIMTA UZDUOTIS:
-// Padarykite skaitmeninį laikrodį, rodantį valandas, minutes ir sekundes. Valandom, minutėm ir sekundėm sugeneruoti panaudokite funkciją rand(). Sugeneruokite skaičių nuo 0 iki 300. Tai papildomos sekundės. Skaičių pridėkite prie jau sugeneruoto laiko. Atspausdinkite laikrodį prieš ir po sekundžių pridėjimo ir pridedamų sekundžių skaičių.
-
+echo '----------------------------------DESIMTA UZDUOTIS-------------------------------';
+echo '<br>';
 
 $valandos = rand(0, 23);
 $minutes = rand(0, 59);
@@ -260,6 +285,8 @@ if($sekundesNaujos < 10){
 }
 echo '<br>';
 echo "naujas laikas pridejus $random sekundes: $valandos:$minutes:$sekundesNaujos.";
+
+
 
 
 ?>
